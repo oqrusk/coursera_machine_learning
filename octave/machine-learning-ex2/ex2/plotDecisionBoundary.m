@@ -29,6 +29,12 @@ else
     % Here is the grid range
     u = linspace(-1, 1.5, 50);
     v = linspace(-1, 1.5, 50);
+    printf('u: \n');
+    size(u)
+    printf('v: \n');
+    size(v)
+    printf('Txxxxx: \n');
+    size(theta)
 
     z = zeros(length(u), length(v));
     % Evaluate z = theta*x over the grid
@@ -37,6 +43,8 @@ else
             z(i,j) = mapFeature(u(i), v(j))*theta;
         end
     end
+    printf('zx: \n');
+    size(z)
     z = z'; % important to transpose z before calling contour
 
     % Plot z = 0
