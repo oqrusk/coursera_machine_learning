@@ -56,9 +56,13 @@ pause;
 
 %  Setup the data matrix appropriately, and add ones for the intercept term
 [m, n] = size(X);
+fprintf('size x\n');
+size(X)
 
 % Add intercept term to x and X_test
 X = [ones(m, 1) X];
+fprintf('size X\n');
+size(X)
 
 % Initialize fitting parameters
 initial_theta = zeros(n + 1, 1);
