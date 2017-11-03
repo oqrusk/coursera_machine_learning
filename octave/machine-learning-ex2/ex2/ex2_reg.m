@@ -74,6 +74,7 @@ lambda = 1;
 [cost, grad] = costFunctionReg(initial_theta, X, y, lambda);
 
 fprintf('Cost at initial theta (zeros): %f\n', cost);
+grad
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
@@ -104,10 +105,15 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 [theta, J, exit_flag] = ...
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
-fprintf('before plot db: \n');
-size(theta)
-size(X)
-size(y)
+%fprintf('before plot db: \n');
+%size(theta)
+%size(X)
+%size(y)
+fprintf('theta: \n');
+theta
+
+fprintf('J: \n');
+J
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;
